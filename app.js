@@ -34,6 +34,10 @@ require('./config/passport')(passport);
 
 app.use(express.static(path.join(__dirname, "public")));
 
+app.get('*' ,(req ,res ) =>{
+  res.sendFile(path.join(__dirname,public/index.html));
+})
+
 /*********************** Server Connection ********************/
 
 app.get("/", (req, res) => {
